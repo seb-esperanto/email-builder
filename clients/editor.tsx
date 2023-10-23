@@ -27,7 +27,10 @@ import "easy-email-editor/lib/style.css";
 import "easy-email-extensions/lib/style.css";
 
 // theme, If you need to change the theme, you can make a duplicate in https://arco.design/themes/design/1799/setting/base/Color
-import "@arco-themes/react-easy-email-theme/css/arco.css";
+// import "@arco-themes/react-mostafa111/css/arco.css";
+// import "@arco-themes/react-easy-email-theme/node_modules/@arco-themes/react-mostafa111/css/arco.css";
+import "@arco-themes/react-mostafa111/css/arco.css";
+
 import axios from "axios";
 import { Config } from "final-form";
 
@@ -119,37 +122,16 @@ export default function App() {
       autoComplete
       dashed={false}
       onSubmit={onSubmit}
+
     >
       {({ values }, { submit, restart }) => {
         return (
           <>
             <PageHeader
-              style={{ background: "var(--color-bg-2)" }}
+              style={{ background: "var(--primary)" }}
               title="Edit"
               extra={
                 <Space>
-                  <a
-                    href="https://www.buymeacoffee.com/easyemail?utm_source=webside&utm_medium=button&utm_content=donate"
-                    target="_blank"
-                    onClick={(ev) => {
-                      ev.preventDefault();
-                      window.open(
-                        "https://www.buymeacoffee.com/easyemail?utm_source=webside&utm_medium=button&utm_content=donate",
-                        "_blank"
-                      );
-                    }}
-                  >
-                    <img
-                      style={{
-                        marginTop: -16,
-                        position: "relative",
-                        top: 11,
-                        height: 32,
-                      }}
-                      src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
-                      alt="Buy Me A Coffee"
-                    />
-                  </a>
                   <Button type="primary" onClick={submit}>
                     Save
                   </Button>
@@ -158,7 +140,7 @@ export default function App() {
             />
             <StandardLayout
               compact={!smallScene}
-              showSourceCode={true}
+              showSourceCode={false}
               categories={defaultCategories}
             >
               <EmailEditor />
